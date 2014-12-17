@@ -1,47 +1,37 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 15/12/2014, 4:18:40 PM
-    Author     : Антон
-*/
-.wrapper {
-    width: 100%;
-    min-width: 1000px;
-    margin: 30px;
-    padding: 50px;
+html{
+    background: rgb(223,223,223);
+    margin: 0;
+    padding: 0;
     border: 0;
-    font-size: 100%;
-    font: sans-serif;
     vertical-align:baseline;
-    background-color:red;
+    font: inherit;
 }
-div {
-    display: block;
-    margin: 3px;
-    padding: 5px;
+body {
+	font: 100% Cantarell, Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	position: relative;
+	background: #fff;
+	color: rgb(76, 67, 65);
+	font-weight:normal;
+	font-style:normal;
 }
 
-.paragraph {
-    width: 100%;
-    min-width: 1000px;
-    margin: 30px;
-    padding: 50px;
-    border: 0;
-    font-size: 100%;
-    font: sans-serif;
-    vertical-align:baseline;
+article, aside, footer, header, hgroup, nav, summary {
+	display: block;
 }
-.middle {
-     width: 100%;
-    min-width: 1000px;
-    margin: 30px;
-    padding: 50px;
-    border: 0;
-    font-size: 100%;
-    font: sans-serif;
-    vertical-align:baseline;
+
+a {
+	text-decoration: none;
+	color: rgb(219,126,64);
+	border-bottom: 1px dotted rgb(219,126,64);
+}
+
+a:hover {
+	color: #7B798F;
+	border-bottom: 1px solid #7B798F;
+}
+header a, header a:hover {
+	color: #ccc;
+	border: none;
 }
 
