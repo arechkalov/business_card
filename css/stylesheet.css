@@ -51,7 +51,7 @@ nav ul {
         }
        
      
-article,footer, p, h1 {
+article,footer, p, h1, div {
 	display: block;
         font-family: Helvetica, sans-serif;
 
@@ -77,6 +77,10 @@ header a, header a:hover {
 	color: #F9BB6A;
 	border: none;
          
+}
+li a, li a:hover {
+        color: #F9BB6A;
+	border: none;
 }
 
 header {
@@ -120,12 +124,25 @@ header h1 p {
         -webkit-margin-before: -1.5em;
 }
 .footer {
-    background: rgb(100, 98, 102);
+        background: rgb(100, 98, 102);
 	padding-top: 1px;
 	overflow: hidden;
 	margin-bottom: 1em;
-	padding-left: 50px;
+        margin: auto;
 }
+        .footer ul {
+             list-style: none;
+             padding-left: 100px;
+             float: left;
+             display: block;
+        }
+        .footer li {
+            font-family: Helvetica, sans-serif;
+            //display: list-item;
+            float: left;
+            padding-left: 25px;
+            list-style: none;
+        }
 .wrapper {
     background: #F9BB6A;
     width: 800px;
