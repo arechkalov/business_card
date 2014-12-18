@@ -14,9 +14,8 @@ html{
       }
 
 body {
-	width: 1280px;
-        margin: 0 auto;
-        background: #F9BB6A;
+	margin: 0 auto;
+        
      }
 #menubar {
         //position: absolute;
@@ -48,10 +47,13 @@ body {
         }
        
      
-article,footer, header, hgroup, p {
+article,footer, header, hgroup, p, h1 {
 	display: block;
         font-family: Helvetica, sans-serif;
 
+}
+.paragraph, .map-canvas, .form {
+    padding: 10px 40px 10px 20px;
 }
 
 a {
@@ -111,6 +113,11 @@ header h1 p {
     background: rgb(100, 98, 102);
 	padding-top: 1px;
 	overflow: hidden;
-	margin-bottom: 0em;
+	margin-bottom: 1em;
 	padding-left: 50px;
+}
+.wrapper {
+    background: #F9BB6A;
+    width: 800px;
+    margin: auto;
 }
