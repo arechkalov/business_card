@@ -11,7 +11,8 @@ html{
 #map-canvas {
         width: 500px;
         height: 400px;
-       
+        
+        
       }
 
 body {
@@ -56,7 +57,7 @@ article,footer, p, h1, div {
         font-family: Helvetica, sans-serif;
 
 }
-.paragraph, .map-canvas, .form {
+.paragraph, #map-canvas, .form {
     padding: 10px 40px 10px 20px;
 }
 .form {
