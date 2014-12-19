@@ -121,12 +121,14 @@ $(document).ready(function()
                     </section>
                 <div class="form"> 
                  <form>
-                    First name:<br>
+                    Name:<br>
                     <input type="text" name="firstname">
                     <br>
-                    Last name:<br>
-                    <input type="text" name="lastname"><br>
-                    <textarea name="message" rows="10" cols="30">Send your message here.</textarea>
+                    E-mail:<br>
+                    <input name="email" id="email" value="" title="Email" class="required-entry input-text validate-email" type="text">
+                    Comment:<br>
+                    <textarea name="comment" id="comment" title="Comment" class="required-entry input-text" cols="50" rows="5"></textarea>
+                    
                     <br>
                     <input type="submit">
                  </form>
