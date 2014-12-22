@@ -122,15 +122,16 @@ $(document).ready(function()
                 <div class="form"> 
                  <form>
                     Name:<br>
-                    <input type="text" name="firstname">
+                    <input type="text" name="firstname" required placeholder="Enter your name">
                     <br>
                     E-mail:<br>
-                    <input name="email" id="email" value="" title="Email" class="required-entry input-text validate-email" type="text">
+                    <input type="email" name="email" required id="email" placeholder="Enter your email" title="Email"><br>
                     Comment:<br>
-                    <textarea name="comment" id="comment" title="Comment" class="required-entry input-text" cols="50" rows="5"></textarea>
+                    <textarea  name="comment" required id="comment" title="Comment"  placeholder="Write your message here" cols="50" rows="5"></textarea>
                     
                     <br>
-                    <input type="submit">
+                    <input type="submit" id="register" value="Register" disabled="disabled" />
+                   
                  </form>
                  </div>
          
@@ -180,14 +181,31 @@ function addMarker() {
 google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
-  </head>
-  <body>
+ 
       <div class="paragraph"> <div id="map-canvas"></div></div>
       <div id="panel" style="margin-left: 20px">
       <button id="drop" onclick="drop()" style="margin-bottom: 20px">Show our branches on the map</button>
      </div>
       
-   
+      <script>
+$(document).ready(function() {
+    $('form > input, textarea').keyup(function() {
+
+        var empty = false;
+        $('form > input, texarea').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#register').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+        } else {
+            $('#register').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+        }
+    });
+})()
+      </script>
     </div>
      <footer class="footer"><div class="footer">
              <ul>
