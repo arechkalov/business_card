@@ -133,7 +133,7 @@ $(document).ready(function()
                 <div class="form" id="theDiv"> 
                  <form action="form_processing.php" method="post">
                     Name:<br>
-                    <input type="text" name="firstname" required placeholder="Enter your name">
+                    <input type="text" name="your_name" required placeholder="Enter your name">
                     <br>
                     E-mail:<br>
                     <input type="email" name="email" required id="email" placeholder="Enter your email" title="Email"><br>
