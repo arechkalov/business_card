@@ -6,13 +6,18 @@
 <script src="jquery-2.1.3.js"></script>
 <script type="text/javascript"> 
 $(function() {
-    $("#show").click(function(){
+    $("#register").removeAttr('disabled');
+    event.preventDefault();
+        $("#register").click(function(){
+         
         $("#theDiv").show("slow");
+        
     });
 $(function() {
     $("#cancel").click(function(){
         $("#theDiv").hide("slow");
     });
+});
 });
 </script>
 <script>
@@ -28,7 +33,7 @@ $(function() {
                //get top-position of target-element and set it as scroll target
                scrollTop: $(target).offset().top-130
        //scrolldelay: 2 seconds
-       },2000,function()
+       },1000,function()
        {
                //attach the hash (#jumptarget) to the pageurl
                location.hash = target;
@@ -140,11 +145,18 @@ $(document).ready(function()
                     Comment:<br>
                     <textarea  name="comment" required id="comment" title="Comment"  placeholder="Write your message here" cols="50" rows="5"></textarea>
                     <br>
-                    <input type="submit" id="register" value="Submit" disabled="disabled" />
+                    </div>
+         <div id="submit"><input type="submit" id="register" value="Submit us a message" disabled="disabled" /> 
+        
+         </div>
                   </form>
-                </div>
-          <button id="show">Send us a message</button>
-          <button id="cancel">Cancel</button>
+                
+         <div id="buttons">
+              <button id="cancel">Cancel</button>
+             <!-- Do not display this at the moment <button id="show">Send us a message</button>>
+-->
+          
+          </div>
          
                  
          

@@ -158,3 +158,20 @@ form input {
     margin-bottom: 10px;
 }
 
+#theDiv {
+    display: none;
+    //float: left;
+}
+
+#buttons {
+    padding: 10px 40px 10px 20px;
+   // float: left;
+}
+
+#destination3 {
+  //  float: right;
+}
+
+#cancel {
+    float: right;
+}
