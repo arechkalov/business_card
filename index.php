@@ -6,16 +6,45 @@
 <script src="jquery-2.1.3.js"></script>
 <script type="text/javascript"> 
 $(function() {
-    $("#register").removeAttr('disabled');
-    event.preventDefault();
+        $("#register").removeAttr('disabled');
+   
         $("#register").click(function(){
-         
-        $("#theDiv").show("slow");
+           //  var eventhandler = function(e) {
+           // event.preventDefault();      
+           // };
+            //$("#target").unbind('submit',eventhandler);
+        event.preventDefault();
+        $("#theDiv").show("fast", function(){
+            $('#register').attr('disabled', 'disabled');
+           $('form > input, textarea').keyup(function() {
+            var empty = false;
+            $('form > input, texarea').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#register').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+        } else {
+            $('#register').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+            $( "#register" ).click(function() {
+            $( "#target" ).submit();
+            });
+    }
+    });
+        });
         
     });
 $(function() {
-    $("#cancel").click(function(){
-        $("#theDiv").hide("slow");
+        $("#cancel").click(function(){
+        $("#theDiv").hide("slow", function(){
+        $("#register").removeAttr('disabled');
+        function resetForm($form) {
+       $form.find('input, textarea').val('');  
+    }// to call, use:
+resetForm($('#target')); // by id, recommended
+        });
     });
 });
 });
@@ -136,7 +165,7 @@ $(document).ready(function()
                     </div>
                     </section>
                 <div class="form" id="theDiv"> 
-                 <form action="form_processing.php" method="post">
+                 <form id="target" action="form_processing.php" method="post">
                     Name:<br>
                     <input type="text" name="your_name" required placeholder="Enter your name">
                     <br>
@@ -212,25 +241,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <button id="drop" onclick="drop()" style="margin-bottom: 20px">Show our branches on the map</button>
      </div>
       
-      <script>
-$(document).ready(function() {
-    $('form > input, textarea').keyup(function() {
-
-        var empty = false;
-        $('form > input, texarea').each(function() {
-            if ($(this).val() == '') {
-                empty = true;
-            }
-        });
-
-        if (empty) {
-            $('#register').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
-        } else {
-            $('#register').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
-        }
-    });
-})()
-      </script>
     </div>
      <footer class="footer"><div class="footer">
              <ul>
