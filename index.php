@@ -1,10 +1,11 @@
+<?php include "process.php"; ?>
 <!DOCTYPE html>
 <html>
     <head> <title>Our business card</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
 <script src="jquery-2.1.3.js"></script>
-<script type="text/javascript"> 
+<!-- <script type="text/javascript"> 
 $(function() {
         $("#register").removeAttr('disabled');
    
@@ -48,7 +49,7 @@ resetForm($('#target')); // by id, recommended
     });
 });
 });
-</script>
+</script> -->
 <script>
     var jump=function(e)
 {
@@ -78,6 +79,7 @@ $(document).ready(function()
 </script>
     </head>
  <body>
+
  <div class="wrapper">
     <header id="pageHeader">
         <div>
@@ -164,21 +166,31 @@ $(document).ready(function()
                     Fusce vehicula quam. Curabitur vel tortor vitae pede imperdiet ultrices.
                     </div>
                     </section>
-                <div class="form" id="theDiv"> 
-                 <form id="target" action="form_processing.php" method="post">
-                    Name:<br>
-                    <input type="text" name="your_name" required placeholder="Enter your name">
+<?php 
+if (isset($msg)) :
+ echo '<div id="formmessage"><p>', $msg , '</p></div>';
+else :
+ ?>       
+         <div class="form" id="theDiv"> 
+
+                 <form id="target" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                    <span id="formerror" class="error"></span>
+                    <label for="myname">Name*</label><br>
+                    <input type="text" name="myname" id="myname"  placeholder="Enter your name" value="<?php if (isset($myname)) { echo $myname; } ?>" >
+                    <?php if (isset($err_myname)) { echo $err_myname; } ?>
                     <br>
-                    E-mail:<br>
-                    <input type="email" name="email" required id="email" placeholder="Enter your email" title="Email"><br>
+                    <label for="email">E-mail*</label><br>
+                    <input type="email" name="email"  id="email" placeholder="Enter your email" title="Email"><br>
+                     <?php if (isset($err_email)) { echo $err_email; } ?>
                     Comment:<br>
-                    <textarea  name="comment" required id="comment" title="Comment"  placeholder="Write your message here" cols="50" rows="5"></textarea>
+                    <textarea  name="comment"  id="comment" title="Comment"  placeholder="Write your message here" cols="50" rows="5"><?php if (isset($mycomments)) { echo $mycomments; } ?></textarea>
                     <br>
+                </form>
                     </div>
-         <div id="submit"><input type="submit" id="register" value="Submit us a message" disabled="disabled" /> 
-        
+         <div id="submit"><input type="submit" name="action" id="register" value="Submit us a message"  /> <!--disabled="disabled"-->
+         
          </div>
-                  </form>
+          
                 
          <div id="buttons">
               <button id="cancel">Cancel</button>
@@ -186,7 +198,7 @@ $(document).ready(function()
 -->
           
           </div>
-         
+         <script src="mysccript.js"></script>
                  
          
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -250,5 +262,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
              </ul></div>
      </footer>
  </div>
+ <?php endif; // output form ?>
  </body>
  </html>

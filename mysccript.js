@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#myform').submit(function() {
+	$('#target').submit(function() {
 		var abort = false;
 		$("div.error").remove();
 		$(':input[required]').each(function() {
@@ -9,10 +9,10 @@ $(document).ready(function() {
 			}
 		}); // go through each required value
 		if (abort) { return false; } else { 
-			postData = $('#myform').serialize();
+			postData = $('#target').serialize();
 			$.post('process.php', postData+'&action=submit&ajaxrequest=1', function(msg) {
 				if (msg) {
-					$('#myform').before(msg);
+					$('#target').before(msg);
 				}
 			});
 			return false;
@@ -20,7 +20,7 @@ $(document).ready(function() {
 	})//on submit
 }); // ready
 
-$('input[placeholder]').blur(function() {
+/* $('input[placeholder]').blur(function() {
 	$("div.error").remove();
 	var myPattern = $(this).attr('pattern');
 	var myPlaceholder = $(this).attr('placeholder');
@@ -30,4 +30,4 @@ $('input[placeholder]').blur(function() {
 		$(this).focus();
 		$(this).after('<div class="error">Entry does not match expected pattern: ' + myPlaceholder + '</div>');
 	} // isValid test
-}); // onblur
+}); // onblur  */

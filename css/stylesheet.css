@@ -159,7 +159,7 @@ form input {
 }
 
 #theDiv {
-    display: none;
+    //display: none;
     //float: left;
 }
 
@@ -174,4 +174,10 @@ form input {
 
 #cancel {
     float: right;
+}
+
+#target .error {
+	font-weight: normal;
+	color: #cf1925;
+	margin-left: 10px;
 }

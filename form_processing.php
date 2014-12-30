@@ -1,5 +1,5 @@
-<?php
-/* Осуществляем проверку вводимых данных и их защиту от враждебных 
+ <?php
+ /* Осуществляем проверку вводимых данных и их защиту от враждебных 
 скриптов */
 $your_name = htmlspecialchars($_POST["your_name"]);
 $email = htmlspecialchars($_POST["email"]);
@@ -70,5 +70,5 @@ function show_error($myError)
 </html>
 <?php
 exit();
-}
-?>
+} 
+?> 
